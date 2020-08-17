@@ -1,0 +1,334 @@
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    overflow-x: hidden;
+}
+/* THE ABOVE CODE HAS BEEN USED TO REMOVE WHITE SPACES, WHICH APPEARED ON THE RIGHT WEBPAGE's SIDE
+  Code retrieved from: https://www.weblimitless.com/stop-website-showing-white-space-right-side/
+  Date Accessed: 20-10-19*/
+
+body {
+  font-size: 2vw;
+  background-color: #A993FF;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+a {
+  color:white;
+  text-decoration: none;
+}
+
+a:hover{
+  color:yellow;
+  transition: .5s all ease-in-out;
+}
+
+h2, h1 {
+  font-family: 'Quattrocento', serif;
+  font-size: 4vw;
+  margin:0;
+}
+
+/* DESKTOP IMAGE CITATION STYLING */
+cite{
+  font-size: 1.5vw;
+  color: purple;
+}
+
+.c1, .c2{
+  grid-column-end: 3;
+  grid-row-start: 3;
+}
+.c1{
+  grid-column-start: 1;
+}
+.c2{
+  grid-column-start: 2;
+}
+
+/*PLEASE note: THE BELOW IMPLEMENTED CSS RULES ARE CORRESPONDING TO COMMENTED HEADINGS IN THE HTML FILE ENDING WITH THE WORD "GRID"
+For example, "DESKTOP HEADER GRID" refers to HTML's "HEADER GRID" however the word "DESKTOP" provides further details to, which Resolutions css rules are applying to. */
+
+
+/* ######## DESKTOP HEADER  GRID ######## */
+/* Bellow Hamburger Menu's CSS properties and values have been adopted and implemented based on the code provided in Modern-css.com,
+ * Author: "Costello",
+ * date accessed: [18-10-19],
+ * Source: https://modern-css.com/responsive-navbar-with-css-grid.html
+ * See further comments for adaptation. All property values have been adapted according to client's specification.
+ [[REFERENCED CODE START]] */
+
+
+ .right-menu {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr auto auto 0.25fr 0.19fr 0.19fr 0.25fr;
+    grid-template-rows: 5.5vw;
+    color:white;
+    padding:1.5vw;
+    font-family: 'Quattrocento', serif;
+    text-align: right;
+  }
+
+ .item1{/*.item1, item0 represent the same University Logo/heading however, this part was implemented
+   to maintain the University Logo at all resolutions, when switching between media queries*/
+   text-align: left;
+  }
+
+ .item0{
+   display: none;
+  }
+
+ .nav-container {
+    width: 100%;
+    background: #791B99;
+  }
+
+ #nav-toggle, .burger-menu {
+   display:none;
+   }
+
+ .searchbar, .search-button {
+   font-size: 1rem;
+  }
+
+/* ######## SMALLER DESKTOP/TABLET 1500px HEADER GRID ######## */
+   @media only screen and (max-width: 1500px) {
+
+    .searchbar, .search-button { /*Added responsive measurements for searchbar resolution changes */
+       font-size: 3vw;
+     }
+
+    .labelgrid{/* A grid has been added to maintain header navigation items, and change their font size when resolution changes  */
+      display:grid;
+      grid-template-columns: 1fr auto;
+      font-size: 3vw;
+      color: white;
+     }
+
+   label.burger-menu {
+      display: inline-block;
+      grid-column-start: 2;
+      padding: 1.5vw;
+    }
+
+    .hamburger{ /*class created to manipulate the size of hamburger icon when resolutions change */
+      padding: 1vw;
+      width:2rem;
+    }
+
+   .right-menu, .item1 {
+      display: none;
+    }
+
+
+    .item0{
+      display:grid;
+      grid-row-end: 2;
+      padding: 1.5vw;
+      font-family: 'Quattrocento', serif;
+    }
+
+    #nav-toggle:checked ~ .right-menu {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr repeat(3, 1fr);
+      grid-column-start: 2;
+      text-align: right;
+      font-size: 3vw;
+    }
+
+    /* SMALLER DESKTOP/TABLET FOOTER GRID */
+        body .footer-container{/*Added responsive font measurements to the webpage's footer, when resolutions change*/
+        font-size: 3vw;
+      }
+
+}
+
+/*Additional MOBILE RESOLITION TARGETED media query has been added*/
+
+/*[[REFERENCED CODE END]]*/
+
+/* ######## MOBILE  600px HEADER GRID ########  */
+@media only screen and (max-width: 600px) {
+
+    .labelgrid{
+      font-size: 4vw;
+    }
+
+    .hamburger{
+      width:1.5rem;
+    }
+
+
+    body .item1{
+      display:none;
+    }
+
+    .item0{
+      grid-template-columns: 1fr 1fr 1fr; /*Hamburger Menu, added additional grid, when resolution changes University's logo breaks into two lines as per client's suggestion*/
+    }
+
+    #nav-toggle:checked ~ .right-menu {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr repeat(3, 1fr);
+      grid-column-start: 2;
+      text-align: right;
+      font-size: 4vw;
+    }
+/* #############(Media Query Continues) MOBILE MAIN STUDY GRIDS ######################## */
+
+/*  body element added next to each class, to gain stronger specificity, alternative would be to switch the order */
+
+/* HEADING "STUDY" */
+    body .heading {
+    font-size: 10vw;
+    padding: 5vw;
+    }
+/* APPLICABLE TO ALL 3 COURSES */
+    body .course1, body .course2, body .course3{
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+    }
+
+    body .text1-heading, body .text2-heading, body .text3-heading {
+      text-align: right;
+      grid-column-end: 3;
+      font-size: 10vw;
+      margin: 0;
+      padding-top: 2vw;
+    }
+
+    body .study1, body .study2, body .study3 {
+      grid-column-end: 3;
+      grid-row-start: 3;
+      height: 50vw;
+    }
+
+    body .text1-paragraph, body .text2-paragraph, body .text3-paragraph {
+      grid-column-end: 3;
+      grid-row-end: 5;
+      padding-bottom: 4vw;
+      font-size: 7vw;
+      text-align: left;
+      padding: 2vw;
+    }
+
+/* APPLICABLE ONLY TO 3rd */
+    .study3{
+      grid-column-start: 1;
+    }
+
+/* MOBILE IMAGE CITATIONS */
+    .c1, .c2{
+      grid-row-start: 4;
+      grid-column-end: 3;
+    }
+
+    cite{
+      font-size: 3.5vw;
+      color: purple;
+    }
+/* ######## (Media Query Continues) MOBILE FOOTER GRID ######## */
+
+    body .item20 {
+      grid-row-start: 2;
+      font-size: 5vw;
+      padding-right: 1vw;
+    }
+    body .item19, .item18, .item17{
+      font-size: 5vw;
+    }
+
+}
+/* ######### MOBILE 250px HEADER GRID ######### */
+@media only screen and (max-width: 250px){
+  .searchbar, .search-button {
+      font-size: 4vw;
+   }
+}
+
+/* MEDIA QUERIES END */
+
+/*Bellow all GRIDS and corresponding rules represent standard Desktop Resolutions  */
+
+/* ######################## DESKTOP STUDY GRIDS ######################## */
+
+.heading{
+  padding: 1vw;
+  margin: 0;
+}
+
+/* APPLICABLE TO ALL 3 */
+.course1, .course2, .course3{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5vw;
+  padding:1.5vw;
+}
+
+/* APPLICABLE ONLY TO 1 & 3, 2nd DIFFERENT ALLIGNMENT */
+.text1-heading, .text3-heading{
+  text-align: right;
+
+}
+
+.study1, .study3{
+  height: 30vw;
+  width: 100%;
+  object-fit: cover;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.text1-paragraph, .text3-paragraph{
+  text-align: right;
+  padding-bottom: 3vw;
+}
+
+/* APPLICABLE ONLY TO 2nd */
+
+.text2-heading{
+  text-align: left;
+}
+
+.text2-paragraph{
+  padding-bottom: 3vw;
+}
+
+.study2{
+  height: 30vw;
+  width: 100%;
+  object-fit: cover;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+
+/* ######## DESKTOP FOOTER GRID ######## */
+
+.footer-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color:white;
+  background-color: #791B99;
+  padding:1vw;
+  font-family: 'Quattrocento', serif;
+}
+
+.item20{
+  text-align: right;
+  grid-row-end:4;
+}
+.item19{
+  grid-row-end:4;
+}
+.item18{
+  grid-row-end:3;
+}
