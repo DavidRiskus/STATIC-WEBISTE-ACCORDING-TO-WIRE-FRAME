@@ -3,9 +3,10 @@ Simple HTML5/CSS Static & Responsive 3 Webpages done according to <b>Designer's 
 
 # Example
 
-https://i.imgur.com/KBj5R4Y.png
+<img src="https://i.imgur.com/KBj5R4Y.png" alt="Home page view Desktop" width="200" heigh="300"/>
 
-https://i.imgur.com/TlpBLnG.png
+<img src="https://i.imgur.com/TlpBLnG.png" alt="Home page view Desktop" width="200" heigh="300"/>
+
 
 # Loading pages
 Run the web pages in the development mode, inside folder STATIC-WEBISTE-ACCORDING-TO-WIRE-FRAME i.e.:
